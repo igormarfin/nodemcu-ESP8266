@@ -1,0 +1,3 @@
+**/*.bin
+arduino-nightly/
+nodemcu-firmware/

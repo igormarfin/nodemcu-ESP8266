@@ -1,0 +1,8 @@
+{
+    "baudrate": "115200",
+    "port": "/dev/ttyUSB0",
+    "connectionDelay": 100,
+    "minify": true,
+    "keeppath": true
+
+}

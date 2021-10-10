@@ -1,0 +1,36 @@
+--- how to run: f=assert(loadfile("scanwifi3.lua"))
+--- f()
+
+
+
+
+function f()
+
+--- Print Output ---
+local function print_AP_List(ap_table)
+ for p,q in pairs(ap_table) do
+ print(p.." : "..q)
+ end
+end
+
+--- AP Search Params ---
+local ap_list_cfg={}
+--- Enter SSID, use nil to list all SSIDs ---
+ap_list_cfg.ssid=nil
+--- Enter BSSID, use nil to list all SSIDs ---
+ap_list_cfg.bssid=nil
+--- Enter Channel ID, use 0 to list all channels ---
+ap_list_cfg.channel=0
+--- Use 0 to skip hidden networks, use 1 to list them ---
+ap_list_cfg.show_hidden=1
+
+--- AP Table Format ---
+--- 1 for Output table format - (BSSID : SSID, RSSI, AUTHMODE, CHANNEL)
+--- 0 for Output table format - (SSID : AUTHMODE, RSSI, BSSID, CHANNEL)
+local ap_list_table_format = 1
+
+--- Call Get AP Method ---
+wifi.sta.getap(ap_list_cfg,ap_list_table_format, print_AP_List)
+-----------------------------------------------
+
+end
